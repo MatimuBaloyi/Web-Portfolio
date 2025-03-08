@@ -237,6 +237,39 @@ document.getElementById("contactForm").addEventListener("submit", async function
                 &copy; 2025 Baloyi Matimu. All Rights Reserved.
             </div>
         </div>
+
+        <!-- Link for the "back-to-top" button -->
+<a href="#" class="back-to-top">
+    <!-- Icon for the arrow-up (FontAwesome icon) -->
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<script>
+    //JS Code for the scroll to top arrow 
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        // Only show button when scrolled down
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+    
+        // Smooth scroll to top
+        backToTopButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    });
+    
+                </script> 
     </footer>
     
 </body>
