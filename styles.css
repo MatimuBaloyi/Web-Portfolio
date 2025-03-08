@@ -1,0 +1,875 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); 
+/* Importing the 'Poppins' font family from Google Fonts to be used globally */
+
+/* Global Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Resets the default margin, padding, and box-sizing for all elements to prevent inconsistencies */
+
+/* Body Styles */
+body {
+    font-family: 'Poppins', sans-serif; /* Sets the global font to Poppins */
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* Sets a gradient background */
+    color: #ffffff; /* Sets the text color to white */
+    min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+    display: flex;
+    flex-direction: column; /* Aligns child elements vertically */
+    align-items: center; /* Centers the elements horizontally */
+    justify-content: center; /* Centers the elements vertically */
+    padding: 2rem; /* Adds padding around the body */
+    line-height: 1.6; /* Increases line spacing for readability */
+}
+
+/* Navigation Styles */
+nav {
+    position: fixed; /* Fixes the navigation bar at the top */
+    top: 0;
+    right: 0;
+    padding: 1rem 4rem; /* Adds padding to the navigation bar */
+    z-index: 100; /* Ensures the nav appears above other content */
+}
+
+nav ul {
+    display: flex; /* Displays navigation items horizontally */
+    list-style: none; /* Removes the bullet points */
+    gap: 2rem; /* Adds space between the list items */
+}
+
+nav ul li a {
+    text-decoration: none; /* Removes underline from links */
+    color: #ffffff; /* Sets the text color to white */
+    font-weight: 500; /* Sets the font weight to medium */
+    transition: color 0.3s ease; /* Adds a transition effect to color changes */
+}
+
+nav ul li a:hover {
+    color: #00fffc; /* Changes link color on hover */
+}
+
+/* Landing Content Styles */
+.landing-content {
+    display: flex; /* Flexbox layout for aligning content */
+    align-items: center; /* Centers items vertically */
+    justify-content: center; /* Centers items horizontally */
+    gap: 4rem; /* Adds space between the content and the profile image */
+    width: 100%;
+    max-width: 1200px; /* Restricts the content width */
+}
+
+.text-content {
+    flex: 1; /* Allows the text content to grow and fill available space */
+}
+
+.text-content h2 {
+    color: #00fffc; /* Sets color for subheading */
+    font-size: 1.2rem; /* Sets font size */
+    margin-bottom: 0.5rem; /* Adds space below the subheading */
+}
+
+.text-content h1 {
+    font-size: 3rem; /* Sets the main heading font size */
+    margin-bottom: 1rem; /* Adds space below the main heading */
+}
+
+.text-content h1 span {
+    color: #ff16d1; /* Adds a different color to span inside h1 */
+}
+
+/* Profile Image Styles */
+.profile-image {
+    flex: 1; /* Allows the image to grow and take available space */
+    max-width: 400px; /* Restricts the max width */
+    border-radius: 20px; /* Rounds the image corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Adds shadow effect */
+    transition: transform 0.3s ease; /* Adds transition effect for scaling */
+}
+
+.profile-image:hover {
+    transform: scale(1.05); /* Scales the image when hovered */
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex; /* Displays social icons in a row */
+    gap: 1.5rem; /* Adds space between social icons */
+    margin-top: 1.5rem; /* Adds space above the social icons */
+}
+
+.social-icons a {
+    color: #ffffff; /* Sets social icon color to white */
+    font-size: 1.5rem; /* Sets icon size */
+    transition: color 0.3s ease; /* Adds transition effect for color changes */
+}
+
+.social-icons a:hover {
+    color: #00fffc; /* Changes icon color on hover */
+}
+
+/* Button Styles */
+.button-group {
+    display: flex; /* Displays buttons in a row */
+    gap: 1rem; /* Adds space between buttons */
+    margin-top: 2rem; /* Adds space above the button group */
+}
+
+.button-group a {
+    text-decoration: none; /* Removes underline from button links */
+}
+
+.btn {
+    padding: 0.8rem 1.5rem; /* Adds padding to buttons */
+    border: none; /* Removes button border */
+    border-radius: 50px; /* Makes buttons rounded */
+    font-weight: 600; /* Sets font weight to bold */
+    cursor: pointer; /* Adds a pointer cursor on hover */
+    transition: transform 0.3s ease; /* Adds transition effect for scaling */
+}
+
+.btn-contact {
+    background: linear-gradient(to right, #302b63, #24243e); /* Sets gradient background for contact button */
+    color: #ffffff; /* Sets text color to white */
+}
+
+.btn-resume {
+    background: linear-gradient(to right, #ff16d1, #ff6b6b); /* Sets gradient background for resume button */
+    color: #ffffff; /* Sets text color to white */
+}
+
+.btn:hover {
+    transform: scale(1.05); /* Scales the button when hovered */
+}
+
+/* About Page */
+/* About Section Styles */
+#about {
+    display: flex; /* Flexbox layout for aligning content */
+    align-items: center; /* Centers items vertically */
+    justify-content: center; /* Centers items horizontally */
+    gap: 4rem; /* Adds space between text and image */
+    width: 100%;
+    max-width: 1200px; /* Restricts the max width */
+    padding: 4rem 2rem; /* Adds padding around the about section */
+}
+
+.text-content P span {
+    color: #ff16d1; /* Sets color for span inside paragraph */
+}
+
+#about .text-content {
+    flex: 1; /* Allows the text content to grow */
+}
+
+#about h2 {
+    color: #00fffc; /* Sets heading color */
+    font-size: 2rem; /* Sets font size */
+    margin-bottom: 1rem; /* Adds space below heading */
+    position: relative; /* Positions the heading relative to its container */
+    padding-bottom: 0.5rem; /* Adds space below the heading */
+    animation: moveHeading 3s ease-in-out infinite; /* Applies animation to the heading */
+}
+
+@keyframes moveHeading {
+    0%, 100% {
+        transform: translateX(0); /* Initial and final state of the animation */
+    }
+    50% {
+        transform: translateX(20px); /* Moves the heading 20px to the right at 50% of the animation */
+    }
+}
+
+#about h2::after {
+    content: ''; /* Creates a pseudo-element after the heading */
+    position: absolute; /* Positions the pseudo-element absolutely */
+    bottom: 0;
+    left: 0;
+    width: 100px; /* Sets width of the pseudo-element */
+    height: 3px; /* Sets height of the pseudo-element */
+    background: linear-gradient(to right, #00fffc, #ff16d1); /* Adds gradient to the pseudo-element */
+}
+
+#about p {
+    color: #ffffff; /* Sets paragraph text color to white */
+    line-height: 1.6; /* Sets line height for better readability */
+    margin-bottom: 2rem; /* Adds space below the paragraph */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #about {
+        flex-direction: column; /* Stacks the content vertically on small screens */
+        text-align: center; /* Centers the text */
+    }
+    
+    #about .text-content,
+    #about img {
+        max-width: 100%; /* Makes the image and text content responsive */
+    }
+    
+    #about h2::after {
+        left: 50%; /* Centers the pseudo-element */
+        transform: translateX(-50%); /* Adjusts position */
+    }
+
+    #about h2 {
+        animation: moveHeading 3s ease-in-out infinite alternate; /* Adjusts the animation for small screens */
+    }
+}
+
+
+/* Experience Section Styles */
+#experience {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    width: 100%; /* Full width */
+    min-height: 100vh; /* Full viewport height */
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* Gradient background */
+    padding: 2rem; /* Padding inside the container */
+    position: relative; /* Allows for absolute positioning of child elements */
+    overflow: hidden; /* Hides overflow */
+}
+
+.work-image {
+    flex: 0 0 50%; /* Takes up 50% of the space */
+    display: flex; /* Use flexbox for child elements */
+    justify-content: center; /* Horizontally center the image */
+    align-items: center; /* Vertically center the image */
+    position: relative; /* Allows for further positioning of child elements */
+}
+
+.work-image img {
+    max-width: 500px; /* Maximum width of the image */
+    width: 100%; /* Image takes full width up to max-width */
+    z-index: 10; /* Ensure the image is above other elements */
+    transform: perspective(1500px) rotateY(-10deg) rotateX(10deg); /* 3D transformation for depth effect */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5); /* Shadow for visual effect */
+}
+
+.experience-content {
+    flex: 0 0 50%; /* Takes up 50% of the space */
+    display: flex; /* Use flexbox for child elements */
+    flex-direction: column; /* Stack child elements vertically */
+    gap: 1.5rem; /* Add space between child elements */
+}
+
+.experience-content h2 {
+    color: #00fffc; /* Cyan color for the heading */
+    font-size: 2.5rem; /* Font size */
+    margin-bottom: 1rem; /* Margin below the heading */
+    text-align: left; /* Align text to the left */
+}
+
+.experience-item {
+    background: rgba(48, 43, 99, 0.5); /* Background with opacity */
+    border-radius: 10px; /* Rounded corners */
+    padding: 1.5rem; /* Padding inside each item */
+    border-left: 4px solid #00fffc; /* Cyan left border */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    position: relative; /* Allows for absolute positioning of child elements */
+    overflow: hidden; /* Hides overflowing content */
+}
+
+.experience-item:hover {
+    transform: translateX(15px); /* Move the item to the right on hover */
+    background: rgba(48, 43, 99, 0.7); /* Darker background on hover */
+}
+
+.experience-item h3 {
+    color: #00fffc; /* Cyan color for subheading */
+    margin-bottom: 0.5rem; /* Margin below the subheading */
+    font-size: 1.2rem; /* Font size for subheading */
+}
+
+.experience-item p {
+    color: #ffffff; /* White text for the paragraph */
+    opacity: 0.8; /* Slightly transparent text */
+}
+
+.experience-item::before {
+    content: ''; /* Adds an empty pseudo-element */
+    position: absolute; /* Absolute positioning */
+    right: -50px; /* Position it off to the right */
+    top: -50px; /* Position it off to the top */
+    width: 100px; /* Width of the pseudo-element */
+    height: 100px; /* Height of the pseudo-element */
+    background: rgba(0, 255, 252, 0.1); /* Light cyan background */
+    transform: rotate(45deg); /* Rotate the pseudo-element */
+    z-index: -1; /* Keep it behind other elements */
+}
+
+/* Responsive Design for Experience Section */
+@media (max-width: 768px) {
+    #experience {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center; /* Center text */
+    }
+
+    .work-image,
+    .experience-content {
+        flex: 0 0 100%; /* Make both take full width */
+    }
+
+    .work-image img {
+        transform: none; /* Remove 3D transformation for smaller screens */
+    }
+}
+
+/* Skills Section Styles */
+#skills {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    width: 100%; /* Full width */
+    min-height: 100vh; /* Full viewport height */
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* Gradient background */
+    padding: 2rem; /* Padding inside the container */
+    flex-direction: column; /* Stack items vertically */
+}
+
+#skills h2 {
+    color: #ff69b4; /* Pink color for heading */
+    font-size: 2.5rem; /* Font size for the heading */
+    margin-bottom: 2rem; /* Margin below the heading */
+    text-align: center; /* Center the heading */
+    position: relative; /* Positioning for the pseudo-element */
+    padding-bottom: 0.5rem; /* Padding for spacing below text */
+    animation: moveHeading 3s ease-in-out infinite; /* Animation for the heading */
+}
+
+@keyframes moveHeading {
+    0%, 100% {
+        transform: translateX(0); /* No movement at start and end */
+    }
+    50% {
+        transform: translateX(20px); /* Move 20px to the right */
+    }
+}
+
+#skills h2::after {
+    content: ''; /* Adds an empty pseudo-element */
+    position: absolute; /* Absolute positioning */
+    bottom: 0; /* Position at the bottom of the element */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center the pseudo-element */
+    width: 100px; /* Width of the line */
+    height: 3px; /* Height of the line */
+    background: linear-gradient(to right, #ff69b4, #ff1493); /* Gradient line */
+}
+
+#skills h3 {
+    color: #00fffc; /* Cyan color for subheading */
+    font-size: 1.8rem; /* Font size for subheading */
+    margin-bottom: 1.5rem; /* Margin below the subheading */
+    text-align: center; /* Center the text */
+}
+
+.skills-container {
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap onto new lines */
+    justify-content: center; /* Center the items horizontally */
+    gap: 1rem; /* Space between items */
+    max-width: 1000px; /* Maximum width of the container */
+    width: 100%; /* Full width */
+    margin-bottom: 2rem; /* Margin at the bottom */
+}
+
+.skill {
+    background: rgba(48, 43, 99, 0.5); /* Background with opacity */
+    color: #ffffff; /* White text */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    padding: 1rem 1.5rem; /* Padding inside each skill item */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 1rem; /* Font size */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    border-left: 4px solid #ff69b4; /* Left border with pink color */
+    position: relative; /* Position relative for pseudo-element */
+    overflow: hidden; /* Hides overflow */
+}
+
+.skill:hover {
+    transform: translateX(15px); /* Move skill item on hover */
+    background: rgba(48, 43, 99, 0.7); /* Darker background on hover */
+}
+
+.skill i, .skill img {
+    margin-right: 0.5rem; /* Space between icon/image and text */
+    font-size: 1.2rem; /* Icon size */
+    color: #ff69b4; /* Pink color for icons/images */
+}
+
+.skill::before {
+    content: ''; /* Adds an empty pseudo-element */
+    position: absolute; /* Absolute positioning */
+    right: -50px; /* Position it off to the right */
+    top: -50px; /* Position it off to the top */
+    width: 100px; /* Width of the pseudo-element */
+    height: 100px; /* Height of the pseudo-element */
+    background: rgba(255, 105, 180, 0.1); /* Light pink background */
+    transform: rotate(45deg); /* Rotate the pseudo-element */
+    z-index: -1; /* Keep it behind other elements */
+}
+
+/* Soft Skills Styling */
+#skills > p {
+    max-width: 1000px; /* Maximum width for the paragraph */
+    text-align: center; /* Center the text */
+    color: #ffffff; /* White text */
+    background: rgba(48, 43, 99, 0.5); /* Background with opacity */
+    padding: 1.5rem; /* Padding inside the paragraph */
+    border-radius: 10px; /* Rounded corners */
+    line-height: 1.6; /* Line height for readability */
+    border-left: 4px solid #ff69b4; /* Left border with pink color */
+    position: relative; /* Position relative for pseudo-element */
+    overflow: hidden; /* Hide overflow */
+}
+
+#skills > p::before {
+    content: ''; /* Adds an empty pseudo-element */
+    position: absolute; /* Absolute positioning */
+    right: -50px; /* Position it off to the right */
+    top: -50px; /* Position it off to the top */
+    width: 100px; /* Width of the pseudo-element */
+    height: 100px; /* Height of the pseudo-element */
+    background: rgba(255, 105, 180, 0.1); /* Light pink background */
+    transform: rotate(45deg); /* Rotate the pseudo-element */
+    z-index: -1; /* Keep it behind other elements */
+}
+
+/* Responsive Design for Skills Section */
+@media (max-width: 768px) {
+    #skills {
+        padding: 1rem; /* Reduce padding on smaller screens */
+    }
+
+    .skills-container {
+        flex-direction: column; /* Stack skill items vertically */
+        align-items: center; /* Center the items horizontally */
+    }
+
+    .skill {
+        width: 100%; /* Skill items take full width */
+        max-width: 300px; /* Limit the maximum width of skill items */
+    }
+}
+
+
+
+/* Education Section Specific Adjustments */
+/* Education Section */
+#education {
+    background: transparent; /* Transparent background for the education section */
+    padding: 2rem 4rem; /* Padding for spacing around the content */
+}
+
+/* Container for education section content */
+.education-container {
+    display: flex; /* Flexbox for layout */
+    align-items: center; /* Aligns items vertically */
+    justify-content: center; /* Centers content horizontally */
+    width: 100%; /* Full width */
+    max-width: 1400px; /* Max width constraint */
+    gap: 2rem; /* Space between flex items */
+}
+
+/* Styling for graduation image */
+.grad-image {
+    flex: 0 0 40%; /* Flexbox: fixed 40% width */
+    display: flex; /* Flexbox for centering the image */
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Relative positioning for potential absolute children */
+}
+
+.grad-image img {
+    max-width: 500px; /* Max image width */
+    width: 100%; /* Full width within max constraint */
+    object-fit: contain; /* Ensures the image fits without distortion */
+    transform: perspective(1000px) rotateY(-10deg) rotateX(5deg); /* 3D effect */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3); /* Shadow for depth */
+    border-radius: 15px; /* Rounded corners */
+}
+
+/* Content section styling */
+.education-content {
+    flex: 0 0 50%; /* Flexbox: fixed 50% width */
+    display: flex;
+    flex-direction: column; /* Vertical stacking of content */
+    gap: 1rem; /* Space between content items */
+    background: rgba(48, 43, 99, 0.3); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blur effect for background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 2rem; /* Padding inside the content */
+}
+
+/* Styling for the heading in the education section */
+#education h2 {
+    color: #00fffc; /* Color for the heading */
+    font-size: 2.5rem; /* Font size */
+    margin-bottom: 1rem; /* Space below heading */
+    text-align: left; /* Align text to the left */
+    position: relative; /* Position for pseudo-element */
+}
+
+/* Education item styling */
+.education-item {
+    background: rgba(48, 43, 99, 0.3); /* Background similar to content */
+    border-radius: 10px; /* Rounded corners */
+    padding: 1rem; /* Padding inside each item */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    position: relative; /* Position for pseudo-elements */
+    border-left: 4px solid #00fffc; /* Left border color */
+}
+
+/* Hover effect for education items */
+.education-item:hover {
+    transform: translateX(10px); /* Slide on hover */
+    background: rgba(48, 43, 99, 0.5); /* Darken the background on hover */
+}
+
+/* Subheading for education items */
+.education-item h3 {
+    color: #00fffc; /* Color for the subheading */
+    margin-bottom: 0.3rem; /* Small margin below */
+    font-size: 1.2rem; /* Font size */
+}
+
+/* Paragraph styling within education items */
+.education-item p {
+    color: #ffffff; /* White text color */
+    opacity: 0.8; /* Slight transparency */
+    margin: 0; /* No margin */
+}
+
+/* Responsive Design for education section */
+@media (max-width: 1024px) {
+    .education-container {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        padding: 1rem; /* Reduce padding */
+    }
+
+    .grad-image,
+    .education-content {
+        flex: 0 0 100%; /* Full width for each element */
+        max-width: 100%; /* Max width of 100% */
+    }
+
+    .grad-image img {
+        transform: none; /* Remove 3D effect on smaller screens */
+        max-width: 100%; /* Full width of image */
+    }
+
+    #education h2 {
+        text-align: center; /* Center-align heading */
+    }
+}
+
+/* Projects Section */
+#projects {
+    position: relative; /* Position for potential absolute children */
+    width: 100%;
+    min-height: 100vh; /* Full height */
+    display: flex; /* Flexbox layout */
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 4rem; /* Padding around the content */
+    background: transparent; /* Transparent background */
+}
+
+/* Container for project section */
+#projects .section-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px; /* Max width for content */
+    gap: 2rem; /* Space between items */
+}
+
+/* Project section heading */
+#projects h2 {
+    color: #00fffc;
+    font-size: 2.5rem;
+    text-align: center; /* Centered text */
+    position: relative; /* For pseudo-element */
+    margin-bottom: 2rem; /* Margin below heading */
+    animation: moveHeading 3s ease-in-out infinite; /* Animated heading */
+}
+
+/* Animation for project section heading */
+@keyframes moveHeading {
+    0%, 100% { transform: translateX(0); } /* Initial and final position */
+    50% { transform: translateX(20px); } /* Move to the right halfway */
+}
+
+/* After pseudo-element for additional styling under heading */
+#projects h2::after {
+    content: ''; /* No content, just styling */
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%); /* Center the line */
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #00fffc, #ff16d1); /* Gradient line */
+}
+
+/* Project item styling */
+.project-item {
+    background: rgba(48, 43, 99, 0.3); /* Similar background to education items */
+    border-radius: 10px;
+    padding: 1.5rem; /* Larger padding */
+    width: 100%;
+    transition: all 0.3s ease; /* Smooth transition */
+    position: relative;
+    border-left: 4px solid #00fffc;
+    margin-bottom: 1rem; /* Space below each project item */
+}
+
+/* Hover effect for project items */
+.project-item:hover {
+    transform: translateX(10px); /* Slide effect */
+    background: rgba(48, 43, 99, 0.5); /* Darker background on hover */
+}
+
+/* Project item title */
+.project-item h3 {
+    margin-bottom: 0.5rem; /* Margin below title */
+}
+
+/* Link styling within project item titles */
+.project-item h3 a {
+    color: #00fffc; /* Default link color */
+    text-decoration: none; /* No underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover effect on project item title links */
+.project-item h3 a:hover {
+    color: #ff16d1; /* Change to a pink color on hover */
+}
+
+/* Paragraph styling within project items */
+.project-item p {
+    color: #ffffff;
+    opacity: 0.8; /* Slight transparency */
+}
+
+/* Responsive design for projects section */
+@media (max-width: 768px) {
+    #projects {
+        padding: 1rem; /* Reduced padding for smaller screens */
+    }
+
+    .project-item {
+        padding: 1rem; /* Less padding for smaller screens */
+    }
+}
+
+/* Contact Section */
+#contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* Gradient background */
+    padding: 2rem; /* Padding for the section */
+    position: relative;
+    overflow: hidden; /* Hide overflow for aesthetic purposes */
+}
+
+/* Contact section container */
+.contact-container {
+    display: flex;
+    flex-direction: row-reverse; /* Reversed order for form on the right */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px; /* Max width */
+    gap: 4rem; /* Space between content items */
+}
+
+/* Contact heading styling */
+#contact h2 {
+    color: #00fffc;
+    font-size: 2.5rem;
+    margin-bottom: 2rem; /* Space below heading */
+    text-align: center; /* Centered text */
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+/* After pseudo-element for the heading underlining */
+#contact h2::after {
+    content: ''; /* Empty content, just styling */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Center it */
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #00fffc, #ff16d1); /* Gradient line */
+}
+
+/* Contact form styling */
+.contact-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: rgba(48, 43, 99, 0.5); /* Semi-transparent background */
+    padding: 2rem; /* Padding inside the form */
+    border-radius: 10px; /* Rounded corners */
+    border-left: 4px solid #00fffc; /* Left border */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for contact form */
+.contact-form:hover {
+    transform: translateX(-15px); /* Slide effect */
+    background: rgba(48, 43, 99, 0.7); /* Darker background on hover */
+}
+
+/* Input and textarea styling for contact form */
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Full width */
+    background: rgba(255, 255, 255, 0.1); /* Slight transparent background */
+    border: none; /* No border */
+    color: #ffffff; /* White text color */
+    padding: 1rem; /* Padding inside */
+    margin-bottom: 1rem; /* Space below each element */
+    border-radius: 5px; /* Rounded corners */
+    font-family: 'Poppins', sans-serif; /* Font style */
+}
+
+/* Placeholder text styling */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* Lighter placeholder text */
+}
+
+/* Submit button styling */
+.contact-form button {
+    background: linear-gradient(to right, #00fffc, #ff16d1); /* Gradient background */
+    color: #ffffff; /* White text color */
+    border: none; /* No border */
+    padding: 1rem; /* Padding inside button */
+    border-radius: 50px; /* Rounded button */
+    font-weight: 600; /* Bold text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.3s ease; /* Smooth scale effect */
+}
+
+/* Hover effect for the button */
+.contact-form button:hover {
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+/* Contact info container */
+.contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between info items */
+}
+
+/* Individual contact info item */
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between icon and text */
+    padding: 1rem 0; /* Padding */
+    color: #ffffff; /* White text */
+}
+
+/* Icon styling for contact info */
+.info-item ion-icon {
+    font-size: 1.5rem;
+    color: #00fffc; /* Icon color */
+}
+
+/* Hover effect for contact info items */
+.contact-info-item:hover {
+    transform: translateX(-15px); /* Slide effect */
+    background: rgba(48, 43, 99, 0.7); /* Darker background on hover */
+}
+
+/* Contact info item heading */
+.contact-info-item h3 {
+    color: #00fffc;
+    margin-bottom: 0.5rem; /* Margin below */
+    font-size: 1.2rem; /* Font size */
+}
+
+/* Contact info item text */
+.contact-info-item p {
+    color: #ffffff;
+    opacity: 0.8; /* Slight transparency */
+}
+
+/* Social media links styling */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem; /* Space between icons */
+    margin-top: 2rem; /* Space above */
+}
+
+/* Social media links hover effect */
+.social-links a {
+    color: #ffffff; /* White color for links */
+    font-size: 1.5rem; /* Icon size */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+/* Hover effect on social media links */
+.social-links a:hover {
+    color: #00fffc; /* Change to teal color on hover */
+}
+
+/* Responsive design for contact section */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column-reverse; /* Stack elements for mobile */
+        gap: 2rem;
+    }
+
+    .contact-form,
+    .contact-info {
+        flex: 0 0 100%; /* Full width on mobile */
+        max-width: 100%; /* Full width */
+    }
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* Gradient background */
+    color: #ffffff; /* White text color */
+    padding: 2rem 4rem; /* Padding */
+    text-align: center; /* Center text */
+    width: 100%; /* Full width */
+}
+
+/* Footer content container */
+footer .footer-content {
+    max-width: 1200px; /* Max width */
+    margin: 0 auto; /* Center align */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; /* Space between footer items */
+}
+
+/* Footer copyright styling */
+footer .copyright {
+    color: #00fffc;
+    font-size: 0.9rem; /* Smaller text size */
+    opacity: 0.7; /* Slight transparency */
+}
