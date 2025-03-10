@@ -432,7 +432,7 @@ style.textContent = `
         // Check for keywords and return appropriate responses
         if (input.includes('hi') || input.includes('hello') || input.includes('hey') || input.includes('how are you')) {
             return getRandomResponse('greetings');
-        } else if (input.includes('about') || input.includes('Matimu') || input.includes('what do you do') || input.includes('who')) {
+        } else if (input.includes('about') || input.includes('matimu') || input.includes('what do you do') || input.includes('who') || input.includes('matimu baloyi')) {
             return getRandomResponse('about');
         } else if (input.includes('experience') || input.includes('work') || input.includes('job')) {
             return getRandomResponse('experience');
