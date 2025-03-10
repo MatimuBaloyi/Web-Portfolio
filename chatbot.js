@@ -447,7 +447,7 @@ style.textContent = `
     function getBotResponse(input) {
         input = input.toLowerCase();
         
-               // Check for keywords and return appropriate responses
+        // Check for keywords and return appropriate responses
 
         // Check for specific combination patterns first (more specific conditions)
     if (input.includes('soft skills') || input.includes('social skills') || input.includes('personal skills') || 
@@ -481,6 +481,7 @@ else if (input.includes('about') || input.includes('matimu') || input.includes('
     return getRandomResponse('default');
 }
 }
+    
     // Get random response from a category
     function getRandomResponse(category) {
         const responseArray = responses[category];
