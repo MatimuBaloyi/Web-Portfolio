@@ -377,6 +377,21 @@ style.textContent = `
     
     // Predefined responses
     const responses = {
+        howAreYou: [
+            "I'm doing great, thanks for asking! How can I help you learn more about Matimu?",
+            "I'm functioning perfectly! Would you like to know about Matimu's skills or experience?"
+        ],
+        
+        okay: [
+            "Great! What else would you like to know about Matimu?",
+            "Excellent! Is there anything specific about Matimu's work or education you're curious about?"
+        ],
+        
+        goodbye: [
+            "Thanks for chatting! Feel free to return if you have more questions about Matimu.",
+            "Goodbye! Hope you enjoyed learning about Matimu. Have a great day!",
+            "Bye for now! Don't hesitate to reach out if you need more information about Matimu."
+        ],
         greetings: [
             "Hi there! I'm Matimu's virtual assistant. How can I help you today?",
             "Hello! Welcome to Matimu's portfolio. What would you like to know?",
@@ -392,6 +407,9 @@ style.textContent = `
         ],
         skills: [
             "Matimu's technical skills include SQL, Java, React, HTML, CSS, JavaScript, and Git.",
+            "Matimu is proficient in SQL, Java, React, HTML, CSS, JavaScript, and Git."
+        ],
+        skilled: [
             "Besides technical skills, Matimu excels in teamwork, presentation, problem-solving, communication, and adaptability as her soft skills."
         ],
         education: [
@@ -429,26 +447,40 @@ style.textContent = `
     function getBotResponse(input) {
         input = input.toLowerCase();
         
-        // Check for keywords and return appropriate responses
-        if (input.includes('hi') || input.includes('hello') || input.includes('hey') || input.includes('how are you')) {
-            return getRandomResponse('greetings');
-        } else if (input.includes('about') || input.includes('matimu') || input.includes('what do you do') || input.includes('who') || input.includes('matimu baloyi')) {
-            return getRandomResponse('about');
-        } else if (input.includes('experience') || input.includes('work') || input.includes('job')) {
-            return getRandomResponse('experience');
-        } else if (input.includes('skills') || input.includes('abilities') || input.includes('technologies') || input.includes('soft skills')) {
-            return getRandomResponse('skills');
-        } else if (input.includes('education') || input.includes('study') || input.includes('qualification') || input.includes('degree')) {
-            return getRandomResponse('education');
-        } else if (input.includes('projects') || input.includes('portfolio') || input.includes('collection') || input.includes('project')) {
-            return getRandomResponse('projects');
-        } else if (input.includes('contact') || input.includes('reach') || input.includes('email') || input.includes('phone')) {
-            return getRandomResponse('contact');
-        } else {
-            return getRandomResponse('default');
-        }
-    }
-    
+               // Check for keywords and return appropriate responses
+
+        // Check for specific combination patterns first (more specific conditions)
+    if (input.includes('soft skills') || input.includes('social skills') || input.includes('personal skills') || 
+    (input.includes('skill') && input.includes('soft'))) {
+    return getRandomResponse('skilled');
+} else if (input.includes('skills') || input.includes('abilities') || input.includes('technologies')) {
+    return getRandomResponse('skills');
+} else if (input.includes('experience') || input.includes('work') || input.includes('job')) {
+    return getRandomResponse('experience');
+} else if (input.includes('projects') || input.includes('portfolio') || input.includes('collection') || input.includes('project')) {
+    return getRandomResponse('projects');
+} else if (input.includes('education') || input.includes('study') || input.includes('qualification') || input.includes('degree')) {
+    return getRandomResponse('education');
+} else if (input.includes('contact') || input.includes('reach') || input.includes('email') || input.includes('phone')) {
+    return getRandomResponse('contact');
+} 
+// Basic conversational patterns
+else if (input.includes('hi') || input.includes('hello') || input.includes('hey') || input.includes('hy')) {
+    return getRandomResponse('greetings');
+} else if (input.includes('how are you') || input.includes('how you doing') || input.includes('how is it going')) {
+    return getRandomResponse('howAreYou');
+} else if (input === 'ok' || input === 'okay' || input === 'cool' || input === 'alright' || input === 'great') {
+    return getRandomResponse('okay');
+} else if (input.includes('bye') || input.includes('goodbye') || input.includes('see you') || input.includes('farewell')) {
+    return getRandomResponse('goodbye');
+} 
+// Make this the last check since it's very broad
+else if (input.includes('about') || input.includes('matimu') || input.includes('what do you do') || input.includes('who') || input.includes('matimu baloyi')) {
+    return getRandomResponse('about');
+} else {
+    return getRandomResponse('default');
+}
+}
     // Get random response from a category
     function getRandomResponse(category) {
         const responseArray = responses[category];
