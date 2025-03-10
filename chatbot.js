@@ -39,8 +39,11 @@ document.addEventListener('DOMContentLoaded', function() {
         </button>
     `;
     // Adding CSS styles for the chatbot
+    /* Create a new <style> element dynamically in JavaScript */
 const style = document.createElement('style');
+    /* Define the CSS styles inside the style element */
 style.textContent = `
+    /* Container for the chatbot, positioned at the bottom right corner */
     .chatbot-container {
         position: fixed;
         bottom: 30px;
@@ -48,7 +51,8 @@ style.textContent = `
         z-index: 1000;
         font-family: 'Poppins', sans-serif;
     }
-    
+
+        /* Button to toggle the chatbot window */
     .chatbot-toggle {
         width: 60px;
         height: 60px;
@@ -61,17 +65,22 @@ style.textContent = `
         box-shadow: 0 10px 25px rgba(0,0,0,0.3);
         transition: all 0.3s ease;
     }
-    
+
+        /* Hover effect for the chatbot toggle button */
     .chatbot-toggle:hover {
         transform: scale(1.1);
         box-shadow: 0 15px 30px rgba(0,0,0,0.4);
     }
-    
+
+        /* Icon inside the chatbot toggle button */
+
     .chatbot-toggle ion-icon {
         font-size: 30px;
         color: white;
     }
-    
+
+        /* Main chatbot window styling */
+
     .chatbot-window {
         position: absolute;
         bottom: 80px;
@@ -87,13 +96,17 @@ style.textContent = `
         transition: all 0.3s ease;
         border: 1px solid rgba(0, 255, 252, 0.3);
     }
-    
+
+        /* Hide chatbot window when not active */
+
     .chatbot-window.hidden {
         opacity: 0;
         visibility: hidden;
         transform: scale(0.8) translateY(20px);
     }
-    
+
+        /* Chatbot header section */
+
     .chatbot-header {
         background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
         padding: 15px;
@@ -102,7 +115,9 @@ style.textContent = `
         align-items: center;
         border-bottom: 1px solid rgba(0, 255, 252, 0.3);
     }
-    
+
+        /* Title and icon in the chatbot header */
+
     .chatbot-title {
         display: flex;
         align-items: center;
@@ -119,7 +134,9 @@ style.textContent = `
         margin: 0;
         font-size: 16px;
     }
-    
+
+     /* Close button for the chatbot */
+
     .chatbot-close {
         cursor: pointer;
     }
@@ -133,13 +150,17 @@ style.textContent = `
     .chatbot-close ion-icon:hover {
         color: #ff16d1;
     }
-    
+
+     /* Main chat area where messages appear */
+
     .chatbot-body {
         flex: 1;
         overflow: hidden;
         position: relative;
     }
-    
+
+    /* Styling for chatbot messages */
+
     .chatbot-messages {
         height: 100%;
         overflow-y: auto;
@@ -157,12 +178,16 @@ style.textContent = `
         word-wrap: break-word;
         animation: fadeIn 0.3s ease;
     }
-    
+
+        /* Message animation */
+
     @keyframes fadeIn {
         from { opacity: 0; transform: translateY(10px); }
         to { opacity: 1; transform: translateY(0); }
     }
-    
+
+        /* Styling for bot messages */
+
     .chatbot-message.bot {
         background: rgba(48, 43, 99, 0.7);
         border-left: 3px solid #00fffc;
@@ -170,7 +195,9 @@ style.textContent = `
         border-radius: 15px 15px 15px 0;
         color: white;
     }
-    
+
+        /* Styling for user messages */
+
     .chatbot-message.user {
         background: linear-gradient(to right, rgba(0, 255, 252, 0.2), rgba(255, 22, 209, 0.2));
         border-right: 3px solid #ff16d1;
@@ -178,7 +205,9 @@ style.textContent = `
         border-radius: 15px 15px 0 15px;
         color: white;
     }
-    
+
+        /* Input area for user messages */
+
     .chatbot-input {
        padding: 12px 10px; 
         background: rgba(15, 12, 41, 0.9);
@@ -237,6 +266,7 @@ style.textContent = `
     .chatbot-messages::-webkit-scrollbar-track {
         background: rgba(15, 12, 41, 0.5);
     }
+
     
     .chatbot-messages::-webkit-scrollbar-thumb {
         background: linear-gradient(to bottom, #00fffc, #ff16d1);
@@ -400,9 +430,9 @@ style.textContent = `
         input = input.toLowerCase();
         
         // Check for keywords and return appropriate responses
-        if (input.includes('hi') || input.includes('hello') || input.includes('hey') || input.includes('greetings')) {
+        if (input.includes('hi') || input.includes('hello') || input.includes('hey') || input.includes('how are you')) {
             return getRandomResponse('greetings');
-        } else if (input.includes('about') || input.includes('who') || input.includes('what do you do')) {
+        } else if (input.includes('about') || input.includes('who') || input.includes('what do you do') || input.includes('Matimu') || input.includes('Matimu Baloyi')) {
             return getRandomResponse('about');
         } else if (input.includes('experience') || input.includes('work') || input.includes('job')) {
             return getRandomResponse('experience');
@@ -410,7 +440,7 @@ style.textContent = `
             return getRandomResponse('skills');
         } else if (input.includes('education') || input.includes('study') || input.includes('qualification') || input.includes('degree')) {
             return getRandomResponse('education');
-        } else if (input.includes('projects') || input.includes('portfolio') || input.includes('collection')) {
+        } else if (input.includes('projects') || input.includes('portfolio') || input.includes('collection') || input.includes('project')) {
             return getRandomResponse('projects');
         } else if (input.includes('contact') || input.includes('reach') || input.includes('email') || input.includes('phone')) {
             return getRandomResponse('contact');
