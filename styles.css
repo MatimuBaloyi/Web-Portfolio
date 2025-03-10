@@ -911,3 +911,110 @@ footer .copyright {
 .back-to-top i {
     font-size: 30px;
 }
+
+
+/* Medium screens (tablets, smaller laptops)
+  To make the website responsive*/
+@media screen and (max-width: 992px) {
+  /* General adjustments */
+  section {
+    padding: 2rem 1rem;
+  }
+  
+  /* Landing area adjustments */
+  .landing-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  
+  .text-content {
+    width: 100%;
+  }
+  
+  .profile-image {
+    margin: 0 auto 1.5rem;
+  }
+  
+  .social-icons, .button-group {
+    justify-content: center;
+  }
+  
+  /* Experience and education sections */
+  #experience, .education-container {
+    flex-direction: column;
+  }
+  
+  .laptop-illustration, .laptop-image {
+    margin: 0 auto 1.5rem;
+    max-width: 400px;
+  }
+  
+  .experience-content, .education-content {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Small screens (mobile phones) */
+@media screen and (max-width: 768px) {
+  /* Navigation adjustments */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+  
+  /* Skills section */
+  .skills-container {
+    justify-content: center;
+  }
+  
+  /* Contact form */
+  .contact-form input, .contact-form textarea, .contact-form button {
+    width: 100%;
+  }
+  
+  /* Button group */
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .button-group .btn {
+    margin: 0.5rem 0;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  /* Project items */
+  .project-item {
+    padding: 1rem;
+  }
+  
+  /* Contact info */
+  .contact-info {
+    text-align: center;
+  }
+  
+  .info-item {
+    justify-content: center;
+  }
+}
+
+/* Very small screens */
+@media screen and (max-width: 480px) {
+  .profile-image {
+    max-width: 200px;
+  }
+  
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  h2 {
+    font-size: 1.3rem;
+  }
+}
