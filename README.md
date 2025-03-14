@@ -4,6 +4,10 @@ About
 
 Hi, I'm Baloyi Matimu, a passionate software developer. This is my personal portfolio website where I showcase my skills, experience, and projects. I built this website using HTML, CSS, and JavaScript to highlight my journey in tech and provide an easy way for people to connect with me.
 
+Link to the published portfolio:
+
+https://matimubaloyi.github.io/Web-Portfolio/
+
 Features:
 
 *Chatbot Feature - An interactive chatbot that can answer questions based on my portfolio.
