@@ -17,6 +17,9 @@
     <!-- Link to the JavaScript file -->
     <script src="chatbot.js"></script>
 
+    <!-- Link to the JavaScript for the scrollArrow -->
+    <script src="scrollArrow.js"></script>
+
 </head>
 <body>
 
@@ -248,32 +251,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
     <i class="fas fa-arrow-up"></i>
 </a>
 
-<script>
-    //JS Code for the scroll to top arrow 
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const backToTopButton = document.querySelector('.back-to-top');
-        
-        // Only show button when scrolled down
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopButton.classList.add('show');
-            } else {
-                backToTopButton.classList.remove('show');
-            }
-        });
-    
-        // Smooth scroll to top
-        backToTopButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    });
-    
-                </script> 
     </footer>
     
 </body>
