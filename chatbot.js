@@ -340,6 +340,66 @@ style.textContent = `
             flex-shrink: 0; /* Prevent the button from shrinking */
         }
     }
+        /* Adjust chatbot window for larger screens */
+@media (min-width: 769px) {
+    .chatbot-container {
+        bottom: 30px;
+        right: 30px;
+    }
+
+    .chatbot-window {
+        width: 350px;
+        max-width: 90vw; /* Ensure it doesn't overflow */
+        height: 500px;
+        max-height: 80vh; /* Limit height */
+        position: absolute;
+        bottom: 80px;
+        right: 0;
+        
+        /* Ensure content is contained */
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .chatbot-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .chatbot-title {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .chatbot-close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 10px; /* Add some spacing */
+    }
+
+    .chatbot-close ion-icon {
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        min-width: 24px;
+        min-height: 24px;
+    }
+}
+
+/* Ensure flexibility for very large screens */
+@media (min-width: 1200px) {
+    .chatbot-window {
+        width: 400px;
+        height: 550px;
+    }
+}
     
     /* Extra small devices */
     @media (max-width: 360px) {
