@@ -19,14 +19,115 @@
 
     <!-- Link to the JavaScript for the scrollArrow -->
     <script src="scrollArrow.js"></script>
+    <script src="navigation.js"></script>
 
+    <style>
+        /* Hamburger Menu Styles */
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .hamburger-menu .bar {
+            width: 30px;
+            height: 3px;
+            background-color: #ffffff;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .hamburger-menu.active .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger-menu.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-menu.active .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Responsive Navigation Styles */
+        @media screen and (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+                transition: 0.3s;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                z-index: 999;
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            nav ul li {
+                text-align: center;
+            }
+
+            nav ul li a {
+                font-size: 1.5rem;
+            }
+
+            .hamburger-menu {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <!-- Main Heading -->
     <h1>Hello</h1> 
     
-    <!-- Navigation Menu -->
+
+    <!-- Hamburger Menu Button -->
+    <div class="hamburger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <script>
+        // Navigation Toggle JavaScript
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const nav = document.querySelector('nav');
+
+            hamburgerMenu.addEventListener('click', () => {
+                hamburgerMenu.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+
+            // Close menu when a navigation link is clicked
+            const navLinks = document.querySelectorAll('nav ul li a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburgerMenu.classList.remove('active');
+                    nav.classList.remove('active');
+                });
+            });
+        });
+    </script>
+        <!-- Navigation Menu -->
+
     <nav>
         <ul>
             <li><a href="#about">ABOUT</a></li>
@@ -236,6 +337,7 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
     </script>
     
+   
     
     <!-- Footer Section -->
     <footer>
