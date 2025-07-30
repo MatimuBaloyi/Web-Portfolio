@@ -1018,3 +1018,197 @@ footer .copyright {
     font-size: 1.3rem;
   }
 }
+
+/* Certifications Section */
+#certifications {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    padding: 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container for certifications section */
+#certifications .section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    gap: 2rem;
+}
+
+/* Certifications grid container */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Certifications section heading */
+#certifications h2 {
+    color: #00fffc; /* Blue/cyan color matching other sections */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.5rem;
+    animation: moveHeading 3s ease-in-out infinite;
+}
+
+/* Animation for certifications heading */
+@keyframes moveHeading {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+}
+
+/* After pseudo-element for heading underline */
+#certifications h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #00fffc, #ff16d1);
+}
+
+/* Description paragraph styling */
+#certifications > .section-container > p {
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+    max-width: 600px;
+}
+
+/* Individual certification item */
+.certification-item {
+    background: rgba(48, 43, 99, 0.5);
+    border-radius: 10px;
+    padding: 1.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    border-left: 4px solid #00fffc;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: fit-content;
+    min-height: 180px;
+}
+
+/* Hover effect for certification items */
+.certification-item:hover {
+    transform: translateY(-5px);
+    background: rgba(48, 43, 99, 0.7);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Certification item title */
+.certification-item h3 {
+    color: #00fffc;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* Certification provider/organization */
+.certification-item p {
+    color: #ffffff;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Button styling within certification items */
+.certification-item .btn {
+    margin-top: auto;
+    min-width: 130px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+}
+
+/* Pseudo-element for decorative background effect */
+.certification-item::before {
+    content: '';
+    position: absolute;
+    right: -50px;
+    top: -50px;
+    width: 100px;
+    height: 100px;
+    background: rgba(0, 255, 252, 0.1);
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+/* Additional styling for certificate links */
+.certification-item a {
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.certification-item a:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive Design for Certifications Section */
+@media (max-width: 768px) {
+    #certifications {
+        padding: 2rem 1rem;
+    }
+
+    #certifications h2 {
+        font-size: 2rem;
+    }
+
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .certification-item {
+        padding: 1rem;
+        min-height: 160px;
+    }
+
+    .certification-item h3 {
+        font-size: 1rem;
+    }
+
+    .certification-item .btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    #certifications {
+        padding: 1rem 0.5rem;
+    }
+
+    #certifications h2 {
+        font-size: 1.8rem;
+    }
+
+    .certification-item {
+        padding: 1rem 0.8rem;
+        min-height: 150px;
+    }
+}
